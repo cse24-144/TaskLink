@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % for images to be allowed to be put
+\usepackage{hyperref} % for the hrefs
+\usepackage{enumitem} % gives more control over lists
+\usepackage{natbib}   % for citations (\citep, \citet)
+\title{TaskLink}
+\author{To be filled by us later}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Introduction: The Data Speaks}
+The latest data from Statistics Botswana reports the youth unemployment rate at \emph{38.2\%\ }(according to the Quarterly Multi Topic Household Survey outputs) \citep{statsbw2024}. General unemployment for persons aged 15 and above stands at roughly 21.0\%\ to 25.9\%\ based on recent multi-topic household tracking \citep{statsbw2024, statsbw2023q3}.
+
+Using this data the idea was brought up to develop a user-friendly web application that connects individuals and businesses with reliable service providers, supporting both short-term and long-term employment opportunities in Botswana.
+
+TaskLink is a web application that connects people who need services with individuals and businesses willing to provide them. Users can post jobs ranging from everyday tasks such as cleaning, pet care, tutoring, moving assistance and gardening to professional services including plumbing, electrical work and catering. The platform creates flexible employment opportunities while helping communities across Botswana access trusted local services.
+
+\section{Data Preprocessing}
+Before the labour market statistics in Section 1 could be used to justify TaskLink, the raw figures published by Statistics Botswana required preprocessing. This involved:
+\begin{enumerate}
+\item \textbf{Cleaning} -- Statistics Botswana publishes overlapping figures across several survey rounds (the Quarterly Multi-Topic Survey and the Multi-Topic Household Survey). Duplicate and superseded figures were removed so only the most recent, comparable quarter-on-quarter values were retained.
+\item \textbf{Standardization} -- Values were converted to a consistent percentage format and rounded to one decimal place so youth and general unemployment figures could be compared directly across quarters.
+\item \textbf{Filtering} -- Only indicators relevant to youth (15--35) and general (15+) unemployment were kept; unrelated indicators such as inflation and poverty incidence were excluded from the analysis.
+\end{enumerate}
+
+TaskLink itself will also depend on well-structured data once it is live, since the platform's core function is matching service seekers with providers. The categories of data the system will need to preprocess include:
+\begin{enumerate}
+\item \textbf{User and provider profiles} -- validating phone numbers, national ID/verification details, and location fields (village, block 9, or Extension 12) before a provider is allowed to list a service (physical or digital).
+\item \textbf{Service listings} -- standardizing job categories (e.g. cleaning, tutoring, plumbing) into a fixed taxonomy so listings can be searched and filtered reliably, rather than relying on free-text entry.
+\item \textbf{Pricing and payment data} -- normalizing all prices to Botswana Pula and validating entries before they are stored, so mobile-money transactions (Orange Money, FNB, etc.) reconcile correctly.
+\end{enumerate}
+Handling this at the data layer early reduces the risk of duplicate accounts, mismatched categories, and inconsistent pricing once the platform scales.
+
+\section{Literature Review}
+
+The reason TaskLink may breach the market and be successful comes from the following studies and findings.
+\begin{enumerate}
+\item \textbf{Fiverr} \citep{fiverr} -- This is an existing business model that works perfectly by allowing the unemployed demographic to take advantage of their latent potential by posting services they can provide and create business opportunities from it. 
+
+Its major caveat is that it is not localized for Botswana  and not many local services are available. That's where TaskLink makes it easier as it is made specifically for Botswana
+\item \textbf{Upwork} \citep{upwork} -- Though very comparable to Fiverr, it excels at different opportunistic findings as the client posts the job instead and freelancers are able to bid on the price from there
+
+The problem with this is the currency friction it has as clients usually pay using different currencies which may be lowered in value due to exchange rates. TaskLink eliminates that as the payment methods may include OrangeMoney, FnB etc using the currency Pula.
+\item \textbf{Freelancer} \citep{freelancer} -- One of the first original freelancer sites for those looking to create opportunities, it works quite similar to Upwork however the competition on bidding for client proposals makes newer freelancers wary.
+
+Due to Freelancer being a longer running site it has an extensive amount of users hence meaning high competition. TaskLink however, has little to no competition as the amount of users will still be in the early stages and you can secure your gigs right away.
+\end{enumerate}
+
+The difference TaskLink provides is that it is designed with Botswana in mind, for the people by the people. With localization in mind there is more security in knowing its from your community and this helps the unemployed venture into new branches.
+\section{Project methodology}
+TaskLink will be developed using an Agile methodology, allowing the team to build, test and improve the system in short development cycles. This approach encourages continuous feedback and incremental improvement.
+\begin{enumerate}
+\item \textbf{Requirements Analysis} -- identify user and business needs.
+\item \textbf{System Design} -- create wireframes, database structure and interface designs.
+\item \textbf{Development} -- implement the front-end and back-end features.
+\item \textbf{Testing} -- perform functional, usability and integration testing.
+\item \textbf{Deployment} -- publish the application and monitor performance.
+\end{enumerate}
+
+\section{Conclusion}
+Botswana's persistently high unemployment, particularly among youth, points to a clear need for platforms that create flexible, accessible income opportunities. Existing freelance marketplaces such as Fiverr, Upwork, and Freelancer demonstrate that this model works, but none of them are built for Botswana's local context, payment infrastructure, or service categories. TaskLink addresses this gap directly by localizing the marketplace around Botswana Pula payment methods, community-based trust, and everyday services alongside professional ones.
+
+By preprocessing both the supporting labour market data and the platform's own user, listing, and payment data from the outset, and by following an Agile development methodology, the project is positioned to move from requirements analysis through to deployment in manageable, testable stages. Future work beyond this report would include piloting the platform with a small group of service providers and seekers to validate the assumptions made here before a full public launch.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
