@@ -62,16 +62,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; color: var(--ink); }
   letter-spacing: -0.3px;
   white-space: nowrap;
 }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  background: var(--ink);
-  color: var(--paper);
-  border-radius: 5px;
-  font-size: 16px;
-  transform: rotate(-4deg);
+.brand-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 .main-nav { display: flex; align-items: center; gap: 28px; margin-right: auto; }
 .main-nav a, .nav-login { font-size: 15px; color: var(--muted); }
