@@ -170,14 +170,13 @@
     async applyToJob(jobId, proposedPrice, message) {
       const profile = await api.getProfile();
       if (!profile) throw new Error("Please sign in to apply.");
-      const { data, error } = await client.from("application").insert({
+      const { error } = await client.from("application").insert({
         job_id: Number(jobId),
         provider_id: profile.user_id,
         proposed_price_pula: Number(proposedPrice),
         message: message || null
-      }).select("application_id").single();
+      });
       if (error) throw error;
-      return data;
     },
     async respondToApplication(applicationId, action) {
       const { data, error } = await client.rpc("respond_to_task_application", {
