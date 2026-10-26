@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskLink — Local help and local work in Botswana</title>
+  <meta name="description" content="Post a job or find work near you. TaskLink connects people in Botswana who need something done with people who can do it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.3" defer></script><script src="js/supabase-config.js" defer></script><script src="js/tasklink-supabase.js" defer></script><script src="js/app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">T</span><span>Task<span class="brand-blue">Link</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>☰</button>
+    <nav class="main-nav" data-main-nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="browse.html">Find work</a>
+      <a href="index.html#services">Categories</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-login" href="login.html">Log in</a>
+      <a class="btn btn-primary btn-small" href="register.html">Join TaskLink</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Get things done by people <span class="text-blue">close to home.</span></h1>
+        <p class="hero-lead">Post a job in a couple of minutes, or pick up work that suits what you're good at. For cleaners, electricians, tutors, caterers, designers and everyone in between, across Botswana.</p>
+        <form class="hero-search" data-search-form>
+          <input name="q" placeholder="What do you need done?" aria-label="Search services">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <div class="popular-search">
+          <span>Try:</span>
+          <a href="browse.html?q=Cleaning">Cleaning</a>
+          <a href="browse.html?q=Design">Design</a>
+          <a href="browse.html?q=Moving">Moving</a>
+          <a href="browse.html?q=Tutoring">Tutoring</a>
+        </div>
+        <p class="hero-note">Free to browse. The listings you'll see are samples while the site is being built.</p>
+      </div>
+
+      <aside class="hero-board" aria-label="Example tasks">
+        <div class="board-title"><strong>On the board</strong><span>Examples</span></div>
+        <a class="board-item" href="browse.html">
+          <div><strong>Fix a flickering light fitting</strong><small>Gaborone · This week</small></div>
+          <span class="board-price">P250</span>
+        </a>
+        <a class="board-item" href="browse.html">
+          <div><strong>Help move a sofa and a few boxes</strong><small>Broadhurst · This weekend</small></div>
+          <span class="board-price">P450</span>
+        </a>
+        <a class="board-item" href="browse.html">
+          <div><strong>Flyer for a market stall</strong><small>Remote · Draft by Friday</small></div>
+          <span class="board-price">P400</span>
+        </a>
+        <a class="board-item" href="browse.html">
+          <div><strong>Deep clean a 2-bedroom flat</strong><small>Gaborone · Move-out</small></div>
+          <span class="board-price">P600</span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <h2>What do you need done?</h2>
+          <p>Pick a category to see what's been posted.</p>
+        </div>
+        <a class="text-link" href="browse.html">See everything</a>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="browse.html?q=Cleaning"><strong>Cleaning</strong><small>Homes, offices, move-outs</small></a>
+        <a class="category-card" href="browse.html?q=Plumbing"><strong>Plumbing</strong><small>Leaks, taps, installations</small></a>
+        <a class="category-card" href="browse.html?q=Electrical"><strong>Electrical</strong><small>Repairs and maintenance</small></a>
+        <a class="category-card" href="browse.html?q=Moving"><strong>Moving &amp; delivery</strong><small>Furniture, boxes, errands</small></a>
+        <a class="category-card" href="browse.html?q=Design"><strong>Design &amp; digital</strong><small>Flyers, logos, websites</small></a>
+        <a class="category-card" href="browse.html?q=Catering"><strong>Catering</strong><small>Parties, meetings, funerals</small></a>
+        <a class="category-card" href="browse.html?q=Tutoring"><strong>Tutoring</strong><small>School subjects, one-on-one</small></a>
+        <a class="category-card" href="browse.html?q=Pet"><strong>Pet care</strong><small>Walking, sitting, feeding</small></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-heading">
+        <div><h2>How it works</h2></div>
+      </div>
+      <ol class="how-list">
+        <li><strong>Say what you need</strong><span>Write a short description, set a budget in pula and pick your area.</span></li>
+        <li><strong>Hear back from people</strong><span>Providers read your post and get in touch through TaskLink messages.</span></li>
+        <li><strong>Choose and get it done</strong><span>Talk through the details first, then pick whoever suits you best.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-section">
+      <div>
+        <h2>Need a hand with something?</h2>
+        <p>Whether it's a leaking tap or a flyer for your stall, a clear post gets better replies. Say what, where and roughly how much.</p>
+        <a class="btn btn-primary" href="post-task.html">Post a task</a>
+      </div>
+      <div>
+        <h2>Good at something? Get paid for it.</h2>
+        <p>Set up a profile, browse what people are asking for and apply to the jobs that fit. Works whether you freelance or run a small business.</p>
+        <ul class="check-list">
+          <li>Tell people what you do and where</li>
+          <li>Apply to tasks that match your skills</li>
+          <li>Message clients before you commit</li>
+        </ul>
+        <a class="btn btn-outline" href="register.html?role=provider">Sign up as a provider</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div>
+        <h2>Start with one task.</h2>
+        <p>Post something you need, or see what others are asking for.</p>
+      </div>
+      <div class="cta-buttons">
+        <a class="btn btn-white" href="post-task.html">Post a task</a>
+        <a class="btn btn-ghost-light" href="browse.html">Find work</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <a class="brand brand-footer" href="index.html"><span class="brand-mark">T</span><span>Task<span class="brand-blue">Link</span></span></a>
+    <p>Local help and local work, in Botswana.</p>
+    <div class="footer-links">
+      <a href="browse.html">Browse tasks</a>
+      <a href="post-task.html">Post a task</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="messages.html">Messages</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span data-year></span> TaskLink. Prototype build.</span>
+    <span>Made in Botswana</span>
+  </div>
+</footer>
+
+</body>
+</html>
